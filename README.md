@@ -24,7 +24,7 @@ Flex Data-Bindding ArrayList ArrayCollection TreeList
 JS/Html MVVM[Model View ViewModel]
 ```
 + Low-Level Render Controller(Vector, Bitmap, Canvas...)
-+ Cpmponent's Life-Cycle
++ Component's Life-Cycle
 + Numerous of Components Support
 ```
 ToolTip Support & Custom ToolTip
@@ -88,6 +88,7 @@ runTime
 }
 
 ```
+上层样式的改变会引起很多的影响到的组件显示方面的更新。这需要一个缓慢、异步的更新过程。
 所以关于样式这块，我们的UI框架需要有一种高效和幂等的更新方式来开完成样运行时样式表的更新/刷新
 
 ## Bounds Size Mode & Layout
@@ -116,13 +117,15 @@ border
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/scroller_bar.jpg)
 
+父容器内任何子容器尺寸的改变都可能会引起本身尺寸的改变，而且还会继续向上传递。这需要一个缓慢、异步的更新过程。
 所以关于布局这块，我们的UI框架需要有一种高效和幂等的更新方式来开完成样组件的自身的尺寸度量和内部child的布局
 
 ## Components Update Mechanism
 
 + Asyc-update
 
-invalidate > validate
+invalidate -> validate
+measure    -> layout
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/update_mechanism.png)
 
@@ -137,4 +140,13 @@ invalidate > validate
 + Unity/Cocos2d
 + ...
 
-## Flow-Layout in Starling
+## Flow-Layout & Screen-Adaptation in Starling
+
++ Design 914X578
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/screen_adaptation_914_578.png)
+
++ IN PC 1800X900
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/screen_adaptation_1416_768.png)
+
+
+
