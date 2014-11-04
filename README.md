@@ -114,7 +114,7 @@ border
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/mesure_layout.jpg)
 
-
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/scroller_bar.jpg)
 
 ## Components Update Mechanism
 
