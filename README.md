@@ -195,63 +195,113 @@ screen_adaptation_2149_1107.png
 
 --------------------------------------------------------------------------------
 
-        package com.alo7.hippo.screenAdaptation
-        {
-            public class FlowFitScreenAdaptation extends ScreenAdaptation
-            {
-                public static var DESIGN_MIN_WIDTH:int = 800;
-                public static var DESIGN_MAX_WIDTH:int = 1280;
-                
-                public static var DESIGN_MIN_HEIGHT:int = 768;
-                
-                public function FlowFitScreenAdaptation()
-                {
-                    super();
-                }
+```actionscript
+package com.alo7.hippo.screenAdaptation
+{
+    public class FlowFitScreenAdaptation extends ScreenAdaptation
+    {
+        public static var DESIGN_MIN_WIDTH:int = 800;
+        public static var DESIGN_MAX_WIDTH:int = 1280;
         
-                /*
-                *          min 800   max 1280
-                * ____________|_________|____________________________________________________
-                *
-                */
-                override public function adaptScreenion(deviceWidth:int, deviceHeight:int):void
+        public static var DESIGN_MIN_HEIGHT:int = 768;
+        
+        public function FlowFitScreenAdaptation()
+        {
+            super();
+        }
+
+        /*
+        *          min 800   max 1280
+        * ____________|_________|____________________________________________________
+        *
+        */
+        override public function adaptScreenion(deviceWidth:int, deviceHeight:int):void
+        {
+            //假设设备是横向的，即宽度略大于高度
+            //如果设备尺寸的尺寸范围本来就在最小和最大之间则即为该设备的值
+            
+            var deviceSizeRatio:Number = deviceWidth / deviceHeight;
+            var deviceToDesignWidthMultiple:Number = deviceWidth / DESIGN_MIN_WIDTH;
+            
+            if(deviceWidth <= DESIGN_MAX_WIDTH)//opt for almost device.
+            {
+                mDesignWidth = deviceWidth;
+                mDesignHeight = deviceHeight;
+            }
+                //如果设备尺寸的尺寸整除后的尺寸在最小和最大之间则即为该设备的整除后的值
+            else if(deviceToDesignWidthMultiple >= 2)
+            {
+                var curDesignWidth:Number = deviceWidth / int(deviceToDesignWidthMultiple);
+                if(curDesignWidth >= DESIGN_MIN_WIDTH && curDesignWidth <= DESIGN_MAX_WIDTH)
                 {
-                    //假设设备是横向的，即宽度略大于高度
-                    //如果设备尺寸的尺寸范围本来就在最小和最大之间则即为该设备的值
-                    
-                    var deviceSizeRatio:Number = deviceWidth / deviceHeight;
-                    var deviceToDesignWidthMultiple:Number = deviceWidth / DESIGN_MIN_WIDTH;
-                    
-                    if(deviceWidth <= DESIGN_MAX_WIDTH)//opt for almost device.
-                    {
-                        mDesignWidth = deviceWidth;
-                        mDesignHeight = deviceHeight;
-                    }
-                        //如果设备尺寸的尺寸整除后的尺寸在最小和最大之间则即为该设备的整除后的值
-                    else if(deviceToDesignWidthMultiple >= 2)
-                    {
-                        var curDesignWidth:Number = deviceWidth / int(deviceToDesignWidthMultiple);
-                        if(curDesignWidth >= DESIGN_MIN_WIDTH && curDesignWidth <= DESIGN_MAX_WIDTH)
-                        {
-                            mDesignWidth = curDesignWidth;
-                            mDesignHeight = mDesignWidth / deviceSizeRatio;
-                        }
-                    }
-                    else
-                    {
-                        //否则返回最大设计尺寸的值。
-                        mDesignWidth = DESIGN_MIN_WIDTH;
-                        mDesignHeight = mDesignWidth / deviceSizeRatio;
-                    }
-                    
-                    //we must ensure we have a min height.
-                    if(mDesignHeight < DESIGN_MIN_HEIGHT)
-                    {
-                        mDesignHeight = DESIGN_MIN_HEIGHT;
-                        mDesignWidth = mDesignHeight * deviceSizeRatio;
-                    }
-                    
-                    mStageViewPort.setTo(0, 0, deviceWidth, deviceHeight);
+                    mDesignWidth = curDesignWidth;
+                    mDesignHeight = mDesignWidth / deviceSizeRatio;
                 }
             }
+            else
+            {
+                //否则返回最大设计尺寸的值。
+                mDesignWidth = DESIGN_MIN_WIDTH;
+                mDesignHeight = mDesignWidth / deviceSizeRatio;
+            }
+            
+            //we must ensure we have a min height.
+            if(mDesignHeight < DESIGN_MIN_HEIGHT)
+            {
+                mDesignHeight = DESIGN_MIN_HEIGHT;
+                mDesignWidth = mDesignHeight * deviceSizeRatio;
+            }
+            
+            mStageViewPort.setTo(0, 0, deviceWidth, deviceHeight);
         }
+    }
+}
+```
+
+--------------------------------------------------------------------------------
+
+```actionscript
+package com.alo7.hippo.screenAdaptation
+{
+	public class ScaleFitScreenAdaptation extends ScreenAdaptation
+	{
+		public function ScaleFitScreenAdaptation()
+		{
+			super();
+		}
+		
+		public function set designWidth(value:int):void
+		{
+			mDesignWidth = value;
+		}
+		
+		public function set designHeight(value:int):void
+		{
+			mDesignHeight = value;
+		}
+		
+		override public function adaptScreenion(deviceWidth:int, deviceHeight:int):void
+		{
+			var designWHRatio:Number = designWidth / mDesignHeight;
+			var deviceWHRatio:Number = deviceWidth / deviceHeight;
+			
+			if(designWHRatio > deviceWHRatio)
+			{
+				mStageViewPort.width = deviceWidth;
+				mStageViewPort.height = mStageViewPort.width / designWHRatio;
+				
+				mStageViewPort.x = 0;
+				mStageViewPort.y = (deviceHeight - mStageViewPort.height) >> 1;
+			}
+			else
+			{
+				mStageViewPort.height = deviceHeight;
+				mStageViewPort.width = mStageViewPort.height * designWHRatio;
+				
+				mStageViewPort.y = 0;
+				mStageViewPort.x = (deviceWidth - mStageViewPort.width) >> 1;
+			}
+		}
+	}
+}
+```
