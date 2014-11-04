@@ -1,7 +1,5 @@
 # Feathers UI-Framework Sharing
 
-Flex < [Feathers](http://feathersui.com/) < Flash CS Component
-
 + feathers urls
 
 ```
@@ -57,11 +55,11 @@ Image
 
 ## Look And Feel
 
-__Look And Feel 是由若干Style Prop支撑起来的外观__
+__Look And Feel 是由若干Style Props支撑起来的外观__
 
 + CSS (Style Props Table)
 
-```
+```css
 global
 {
     fontSize:12;
@@ -93,7 +91,7 @@ element.setStyle("text-align", "center");
 + Theme
 
 ```
-Theme 就是这些所有Pre-Design Style Props Table 已经资源一个集合
+Theme 就是这些所有Pre-Design Style Props Table 资源一个集合
 ```
 
 + Style Merge Rules
@@ -133,6 +131,8 @@ maxWidth 最大约束尺寸
 padding
 margin
 border
+x
+left
 ```
 
 + Layout
@@ -154,6 +154,10 @@ invalidate -> validate
 measure    -> layout
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/update_mechanism.png)
+
+## Feathers
+
+Flex < [Feathers](http://feathersui.com/) < Flash CS Component
 
 ## Other UI-Framework
 + [Viburnum](https://github.com/alex-zhang/Viburnum-UIFramework)
