@@ -1,11 +1,12 @@
 # Feathers UI-Framework Sharing
 
-## [Feathers](http://feathersui.com/)
-
-Flex < Feathers < Flash CS Component
+Flex < [Feathers](http://feathersui.com/) < Flash CS Component
 
 ## UI-Framework Achitecture
 * Cursor Control
+```
+System Cursor > Parent Container Cursor > Business Logic Cursor
+```
 * DragAndDrop
 * Focus Control
 * ToolTip Support & Custom ToolTip
