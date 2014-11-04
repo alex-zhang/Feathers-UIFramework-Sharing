@@ -94,6 +94,8 @@ runTime
 
 + Bounds Size Mode
 
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/sp_size_properties.png)
+
 ```
 width 当前实际尺寸(包含缩放)
 explicitWidth 显示指定的具体尺寸（不需要依赖父容器的尺寸）
@@ -108,17 +110,21 @@ border
 
 + Layout
 
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/view_layout.jpg)
+
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/layout-diagram.png)
-
-![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/sp_size_properties.png)
-
-![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/mesure_layout.jpg)
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/scroller_bar.jpg)
 
+所以关于布局这块，我们的UI框架需要有一种高效和幂等的更新方式来开完成样组件的自身的尺寸度量和内部child的布局
+
 ## Components Update Mechanism
 
++ Asyc-update
 
+invalidate > validate
+
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/update_mechanism.png)
 
 ## Other UI-Framework
 + [Viburnum](https://github.com/alex-zhang/Viburnum-UIFramework)
@@ -130,3 +136,5 @@ border
 + HTML(JQueryUI, KindoUI)
 + Unity/Cocos2d
 + ...
+
+## Flow-Layout in Starling
