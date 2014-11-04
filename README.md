@@ -107,9 +107,12 @@ border
 ```
 
 + Layout
-AbsoluteLayout
 
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/layout-diagram.png)
 
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/sp_size_properties.png)
+
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/mesure_layout.jpg)
 
 
 
