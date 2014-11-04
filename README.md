@@ -142,11 +142,51 @@ measure    -> layout
 
 ## Flow-Layout & Screen-Adaptation in Starling
 
-+ Design 914X578
++ Design 914X578 UseFor App
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/screen_adaptation_914_578.png)
 
-+ IN PC 1800X900
+__首先不考虑高清、低清资源__
+
++ 方案1:等比缩放：
+
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/Penguflip_scale_up.png)
+
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/Penguflip_scale_up_ipad_bars.png)
+
+优点：逻辑简单，大部分分辨率下OK，整个app业务逻辑完全基于绝对位置布局(参考 原始914X578)
+缺点：部分非主流的分辨率会下出现留白，有些很能会很大。
+
++ 方案2:拉伸缩放：
+
+优点：逻辑简单，大部分分辨率下OK，整个app业务逻辑完全基于绝对位置布局(参考 原始914X578)
+缺点：部分非主流的分辨率会下出现变形，有些很能会严重变形。有些底层不支持。
+
++ 方案3: 等比缩放 + （轻微）拉伸缩放：
+针对方案1中的留白情况时，做轻微拉伸，目的是在拉伸不严重的情况下，减少留白的面积
+
+优点：是方案1的优化版
+缺点：有些底层不支持
+
+------------------------------------------------------------------------------
+
++ 方案3: 流式布局
+
++ Flow-Layout For 1800X900
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/screen_adaptation_1416_768.png)
 
++ Flow-Layout 2149X1107
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/screen_adaptation_1416_768.png)
+screen_adaptation_2149_1107.png
 
++ Flow-Layout 2880X1536
+.....
 
+优点：能够完美适应所有分辨率，没有变形和留白
+缺点：需要在UI层次支持流式布局。在分辨率差异较大是，页面显得太空旷
+
++ 方案4: 流式布局 + 等比缩放
+
+这就是我们现在使用的解决方案
+
+优点：很多
+缺点：没有
