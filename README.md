@@ -2,6 +2,12 @@
 
 Flex < [Feathers](http://feathersui.com/) < Flash CS Component
 
++ feathers urls
+
+[http://feathersui.com](http://feathersui.com)
+[http://forum.starling-framework.org/forum/feathers](http://forum.starling-framework.org/forum/feathers)
+[http://wiki.starling-framework.org/feathers/start](http://wiki.starling-framework.org/feathers/start)
+
 ## UI-Framework Achitecture
 + Cursor Control
 ```
@@ -207,8 +213,6 @@ screen_adaptation_2149_1107.png
 
 > 优点：很多
 > 缺点：没有
-
-
 
 --------------------------------------------------------------------------------
 
