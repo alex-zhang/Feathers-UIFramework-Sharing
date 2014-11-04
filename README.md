@@ -196,7 +196,7 @@ screen_adaptation_2149_1107.png
 --------------------------------------------------------------------------------
 
 ```actionscript
-package com.alo7.hippo.screenAdaptation
+package com.xxx.hippo.screenAdaptation
 {
     public class FlowFitScreenAdaptation extends ScreenAdaptation
     {
@@ -261,7 +261,7 @@ package com.alo7.hippo.screenAdaptation
 --------------------------------------------------------------------------------
 
 ```actionscript
-package com.alo7.hippo.screenAdaptation
+package com.xxx.hippo.screenAdaptation
 {
 	public class ScaleFitScreenAdaptation extends ScreenAdaptation
 	{
