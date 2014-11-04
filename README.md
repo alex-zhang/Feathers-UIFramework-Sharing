@@ -19,7 +19,7 @@ System Cursor > Parent Container Cursor[...] > Business Logic Cursor
 + Animation/Effect/Tween
 + System Level Display Layers Sort Division.
 + Asset & Asset Loader
-+ Interactive Event
++ Interactive & Event Stream
 + Localization & I18N
 + __Look And Feel (Theme & Style & Font & Skin Support)__
 + __Bounds Size Mode & Layout__
