@@ -29,10 +29,27 @@ JS/Html MVVM[Model View ViewModel]
 ```
 ToolTip Support & Custom ToolTip
 Alert
+Button
+List
+Tabel
+Tree
+CheckBox
+DateField
+DateChoose
+TextInput
+TextArea
+Slider
+ScrollBar
+According
+TabBar
+Image
 ...
 ```
 
 ## Look And Feel
+
+__Look And Feel 是由若干Style Prop支撑起来的外观__
+
 + CSS (Style Props Table)
 
 ```
