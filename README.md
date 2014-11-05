@@ -1,6 +1,6 @@
 # Feathers UI-Framework Sharing
 
-![](http://feathersui.com/images/adobe-ipad.png)
+![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/feathers.png)
 
 why start here?
 
