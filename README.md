@@ -135,6 +135,8 @@ scaleX
 
 + Layout
 
+measure    -> layout
+
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/view_layout.jpg)
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/layout-diagram.png)
@@ -149,7 +151,6 @@ scaleX
 + Asyc-update
 
 invalidate -> validate
-measure    -> layout
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/update_mechanism.png)
 
