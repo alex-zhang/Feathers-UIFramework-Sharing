@@ -2,9 +2,10 @@
 
 ![](https://github.com/alex-zhang/Feathers-UIFramework-Sharing/blob/master/feathers.png)
 
-why start here?
-
 ## UI-Framework Achitecture
+
+**why start here?**
+
 + Cursor Control
 ```
 System Cursor > Parent Container Cursor[...] > Business Logic Cursor
