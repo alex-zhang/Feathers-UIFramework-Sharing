@@ -99,7 +99,7 @@ inlineStyles > StyleName Styles > Class Styles > Parent Inherited Styles[...] > 
 
 + Final Computed Style Props Table
 
-```
+```css
 runTime
 {
     fontSize:13;
