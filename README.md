@@ -17,12 +17,12 @@ System Cursor > Parent Container Cursor[...] > Business Logic Cursor
 + __Bounds Size Mode & Layout__
 + __Components Update Mechanism__ 
 + Data-Drive Based Component Design
-+ Vector Graphics
 ```
 Flex Data-Bindding ArrayList ArrayCollection TreeList    
 JS/Html MVVM[Model View ViewModel]
 ```
 + Low-Level Render Controller(Vector, Bitmap, Canvas...)
++ Vector Graphics
 + Component's Life-Cycle
 + Numerous of Components Support
 ```
