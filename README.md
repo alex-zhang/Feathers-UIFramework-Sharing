@@ -1,5 +1,7 @@
 # Feathers UI-Framework Sharing
 
+why start here?
+
 ## UI-Framework Achitecture
 + Cursor Control
 ```
