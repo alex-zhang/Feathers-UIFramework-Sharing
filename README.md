@@ -163,7 +163,9 @@ Flex < [Feathers](http://feathersui.com/) < Flash CS Component
 ```
 http://feathersui.com
 http://forum.starling-framework.org/forum/feathers
+http://wiki.starling-framework.org
 http://wiki.starling-framework.org/feathers/start
+http://wiki.starling-framework.org/feathers/text-renderers
 ```
 
 + source code
