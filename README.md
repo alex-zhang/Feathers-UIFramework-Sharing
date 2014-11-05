@@ -1,5 +1,7 @@
 # Feathers UI-Framework Sharing
 
+![](http://feathersui.com/images/adobe-ipad.png)
+
 why start here?
 
 ## UI-Framework Achitecture
