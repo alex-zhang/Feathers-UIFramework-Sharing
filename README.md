@@ -59,7 +59,7 @@ __Look And Feel 是由若干Style Props支撑起来的外观__
 ```css
 global
 {
-    fontSize:12;
+    font-size:12;
     text-align:center;
     color:#CCCCCC;
     background-color:#FFFCCC;
@@ -67,7 +67,7 @@ global
 
 Parent
 {
-    fontSize:13;
+    font-size:13;
     color:#FFF;
 }
 
@@ -102,7 +102,7 @@ inlineStyles > StyleName Styles > Class Styles > Parent Inherited Styles[...] > 
 ```css
 runTime
 {
-    fontSize:13;
+    font-size:13;
     text-align:right;
     color:#123123;
     background-color:#FFFCCC;
